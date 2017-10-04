@@ -1,9 +1,17 @@
 Requirements & Specifications
 
 Our website is about a dog adoption organisation. 
-Bringing into discussion the layout problem , we are going to create several pages , such as : Home page , which will describe mostly the purpose of our website and a suitable , convincing design.
-Another page will be the one sharing with the future dog owners some of our previous work with dogs and ,also , the successful adoptions we managed to undertake. Moreover , we will present a separate page with the dogs to be adopted . For each dog , we are going to attach a picture , which , when clicked on , will pop up a window with the full description of the respective dog.  This window will also have a button for accepting an adoption that will send the customer directly to an appointment formular. This formular is sent afterwards into a database , which lets the customer know if the adoption for that dog is still available. 
-On the top of the page ,there are going to be placed the Sign in and Sign up  buttons . The sign up will create a new account for the customer , while the sign in button will only ask for credentials.
+Bringing into discussion the layout problem , we are going to create several pages , such as : Home page ,which will describe mostly
+the purpose of our website and a suitable , convincing design.
+Another page will be the one sharing with the future dog owners some of our previous work with dogs and ,also , the successful adoptions 
+we managed to undertake. Moreover , we will present a separate page with the dogs to be adopted . For each dog , we are going to attach
+a picture , which , when clicked on , will pop up a window with the full description of the respective dog.
+This window will also have a button for accepting an adoption that will send the customer directly to an appointment formular.
+This formular is sent afterwards into a database , which lets the customer know if the adoption for that dog is still available. 
+On the top of the page ,there are going to be placed the Sign in and Sign up  buttons . The sign up will create a new account for the
+customer , while the sign in button will only ask for credentials.
 Also , on the top of the page , a search button will be placed , which gives you the filter of searching by breed.
 
-In order to accomplish everything, we thought we use PHP , for managing the coummunication between the website and the database , Oracle for creating and managing the database , JavaScript , for example , for creating those on-click pop-ups. Also , we are going to use HTML and CSS for design and layout.
+In order to accomplish everything, we thought we use PHP , for managing the coummunication between the website and the database ,
+Oracle for creating and managing the database , JavaScript , for example , for creating those on-click pop-ups. Also , we are going to use 
+HTML and CSS for design and layout.
