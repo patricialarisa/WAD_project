@@ -1,0 +1,151 @@
+<html>
+<style> 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+	
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+	text-align:center;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
+header{
+	bottom:0;
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+	
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    
+    background-image: url("1.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer{
+	top:0;
+	background-color: black;
+    clear: left;
+    text-align: center;
+	color:white;
+	padding: 1em;
+	height:150px;
+
+}
+
+div.container {
+    width: 1200px;
+	text-align:left;
+	  }
+	  
+
+.img1{
+	float:left;
+	margin-left:30px;
+	
+}
+
+.img2{
+	float:right;
+	margin-top:40px;
+
+}
+
+h3{
+	text-indent:30px;
+	padding-top:40px;
+}
+
+.button {
+    background-color: #6f99f2;
+    border: none;
+    border-radius:8px;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div.page{
+	background-color:white;
+	width:50%;
+	border-color:#ff0000;
+	text-align:center;
+	border-width:5px;
+}
+
+p{
+	margin-left:40px;
+	margin-right:20px;
+}
+
+
+
+div.content{
+border-width:5px;
+border-style:solid;
+border-color:black;
+width:50%;
+background-color:white;
+}
+
+div.box2{
+text-align:center;
+}
+
+
+div.photo{
+	text-align:right;
+	right:0;
+	bottom:0;
+	position:absolute;
+}
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+
+</style>
+</html>
