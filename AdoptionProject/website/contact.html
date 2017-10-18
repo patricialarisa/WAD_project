@@ -1,6 +1,9 @@
-<!DOCTYPE html>
 <html>
-<title > Online appointment </title>
+
+<title> Contact </title>
+
+
+
 <head>
 
 <meta charset="utf-8">
@@ -8,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
 <style>
 
@@ -67,7 +71,6 @@ header{
     background-color: black;
     clear: left;
     text-align: center;
-	width:100%;
 	
 }
 body, html {
@@ -112,9 +115,13 @@ div.container {
 
 }
 
+h1{
+	text-indent:30px;
+	color:#368BC1;
+}
 h3{
 	text-indent:30px;
-	padding-top:40px;
+	padding-bottom:40px;
 }
 
 .button {
@@ -148,10 +155,10 @@ p{
 
 div.content{
 border-width:5px;
-border-style:solid;
-border-color:black;
 width:50%;
 background-color:white;
+padding-top:10px;
+padding-bottom:50px;
 }
 
 div.box2{
@@ -174,88 +181,74 @@ div.photo{
   .modal-footer {
       background-color: #f9f9f9;
   }
- 
 
 </style>
-</head>
-<body background="s.jpg" background-position="center" background-repeat="no-repeat"
-	height="100%" width="100%" >
-	
-	
-<div class="container" margin="500px" >
 
-	<header>
-		<h1>APPOINTMENT FORMULAR</h1>
-	</header>
+<head>
+
 	
-	<ul>
+	<header> 
+	<div class="container">
+	<img src="p.png" class="img1" width="300px" height="150px"></img></div>
+		</header></head>
 		
+		<body background-color="white" background-position="center" background-repeat="no-repeat"
+	height="100%" width="100%"><!-- <div class="bg"> -->
+	
+	
+	<ul class>
+	
 		<li><a  href="#home">Home</a></li>
-		<li><a href="file:///C:/Users/Dell/Desktop/website/about.html">About us</a></li>
-		<li><a class="active" href="file:///C:/Users/Dell/Desktop/website/contact.html"> Make an appointment </a></li>
-		<li><a href="#">Contact</a></li>
+		<li><a href="about.html">Adoption</a></li>
+		<li><a href="app.html"> Make an appointment </a></li>
+		<li><a href="adoption.html">Happy pupps</a></li>
+		<li><a class="active" href="contact.html">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
 			<input  type="text" name="search" placeholder="Search..">
 		</form></li>
-		<li style="float:right"><button type="button" class="btn btn-default btn-lg" id="myButton">Sign up</button></li>
-		<li style="float:right"><p style="color:white"> or </p></li>
-		<li style="float:right"><button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button></li>
+		<li style="float:right; padding-right:20px"><button type="button" class="btn btn-default btn-lg" id="myButton">Sign up</button></li>
 		
+		<li style="float:right;"><button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+		
+		</li>
+		
+	 
 	</ul>
 	
-	<div id="page" class="content" background-color="white" >
-		<div id="content">
-			<div class="title" position="center">
-				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Online appointment</b></font></h1></div>
-                
-		<form method="post" action="trimite.php" >
-			  <p align="left"><b>First Name:</b><input name="first_name" style="width:200px " id="first_name" type="text" /></p>
-			  <p align="left"><b>Last Name:</b><input name="last_name"  style="width:200px" id="last_name" type="text" /> </p>
-			  <p align="left"><b>E-mail:</b><input name="email" style="width:200px"  id="email" type="text" /></p>
-			  <p align="left"><b>Phone number:</b> <input name="phone" style="width:200px" id="phone" type="text" /></p>
-			  <p align="left"><b>Appointment hour:</b><input name="app" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Appointment day:</b><input name="app" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Adoption ID </b><input name="app" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Observations:</b><input name="obs" style="height:200px; width:200px" id="obs" type="text" /></p>
+	<div class="container">
+	 
+	<h1> Contact Us Online </h1>
 	
-		<p align="left"><button type="submit" align="left">Send</button></p>
-	    </form>
-	<p ><i>* If you wish to make an appointment,our team will undertake your call as soon as possible.
-		For your time is precious , we don't want you to waste it. Complete the on-line form above.
-		Otherwise , you can return to the home page by clicking the button below. </i></p>
-		<p align="center"><i>Thank you ! </i></p>
-		<p align="center"><a href="#home"><img class="home" src="hh.png"  width="70" height="70" /></a></p>
-		</div>
-		
-		
-		
-		<div id="sidebar">
-		
-			<div class="box2">
-			
-				<div class="title">
-					<h2>For more information</h2>
-					<p>Phone number: 0789 123 456<br />
-					Email: contact@test.ro</p>
-				
-				</div>
-				
-				</div>
-				
-				
-				
-				
-				</div>
-				
-				
-				</div>
-				<footer> Copyrights 2017 . All rights reserved. 
+	<h3>Please use this form for general questions about our website. For inquiries related to a specific animal, kindly 
+	reach out directly to the shelter where the animal is located.
+	Shelter information is listed on each animal's profile page. Thank you!</h3>
+	
+    <form method="post" action="send.php" >
+			  <p align="left"><b>First Name:</b><input name="Name" style="width:200px " id="Name" type="text" /></p>
+			  <p align="left"><b>Last Name:</b><input name="Surname"  style="width:200px" id="Surname" type="text" /> </p>
+			  <p align="left" ><b>E-mail:</b><input name="Mail" style="width:200px"  id="Mail" type="text" /></p>
+   
+   <button class="button" type="submit">Send Message</button>
+	</form>
+	 
+	 
+	 <br></br>
+	 
+	 <div class="content">
+	 <p> <i> *I consent to receive email communication from Petango.com on behalf of Pethealth Services Inc. and 
+	 Pethealth Services Inc. including
+	 notifications regarding lost pets and news updates. I may withdraw my consent at any time by emailing 
+	 unsubscribe@petango.com or by resubmitting a request on the unsubscribe page. </i> </p> </div>
+	</div>
+	
+	<footer> Copyrights 2017 . All rights reserved. 
 				<img src="f.jpg" align="right" width="50px" height="50px"></img> 
 				<img src="tw.jpg" align="right" width="70px" height="50px"></img>
 				
 				</footer>
-<div class="modal fade" id="myModal" role="dialog">
+
+		<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -305,21 +298,21 @@ $(document).ready(function(){
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              <input type="text" class="form-control" id="usrname" placeholder="">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" id="psw" placeholder="">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" id="psw" placeholder="">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
@@ -344,7 +337,9 @@ $(document).ready(function(){
     });
 });
 </script>
-
-
+		
 </body>
+
+
 </html>
+

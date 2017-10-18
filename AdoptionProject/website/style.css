@@ -1,6 +1,21 @@
-<html>
-<style> 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+   
+    transition: width 0.4s ease-in-out;
+}
 
+input[type=text]:focus {
+    width: 100%;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -12,6 +27,7 @@ ul {
 
 li {
     float: left;
+	
 }
 
 li a {
@@ -20,6 +36,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+	margin-left:10px;
 }
 
 li a:hover {
@@ -145,7 +162,14 @@ div.photo{
   .modal-footer {
       background-color: #f9f9f9;
   }
+  
+ h1{
+	text-indent:30px;
+	color:#368BC1;
+}
+h3{
+	text-indent:30px;
+	padding-bottom:40px;
+}
 
-
-</style>
-</html>
+  

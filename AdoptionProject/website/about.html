@@ -5,6 +5,7 @@
 <title> About us </title>
 
 <head>
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -182,7 +183,8 @@ div.photo{
 
 	
 	<header> 
-		<h1> A LITTLE MORE ABOUT US </h1>
+		<div class="container">
+	<img src="p.png" class="img1" width="300px" height="150px"></img></div>
 		</header></head>
 		
 		<body background="s.jpg" background-position="center" background-repeat="no-repeat"
@@ -191,9 +193,10 @@ div.photo{
 	<ul class>
 	
 		<li><a  href="#home">Home</a></li>
-		<li><a class="active" href="file:///C:/Users/Dell/Desktop/website/about.html">About us</a></li>
-		<li><a href="file:///C:/Users/Dell/Desktop/website/contact.html"> Make an appointment </a></li>
-		<li><a href="#">Contact</a></li>
+		<li><a class="active" href="about.html">Adoption</a></li>
+		<li><a href="app.html"> Make an appointment </a></li>
+		<li><a href="adoption.html">Happy pupps</a></li>
+		<li><a href="contact.html">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
 			<input  type="text" name="search" placeholder="Search..">
@@ -215,9 +218,8 @@ div.photo{
 			 <div style="display:block">
 		<div><h3 style="float:right; background-color:#f8def5; margin-left:20px;"> 
 		<img src="m.jpg" style="padding:50px; " class="img1" width="600px" height="400px" > </img>
-		     Our little friend here is called Max. He is a labrador retriever of only 5 months. He was adopted by a loving and caring family
-			 two months ago and he still is nurtured and loved by all of the family members.Happiness and playfulness are his main
-			 qualities(especially if you gave him a ball to play with).<br></br>
+		     Our little friend here is called Max. He is a labrador retriever of only 5 months. He is looking for a kind-hearted and
+			 loving family to take care and nurture him.<br></br>
 			 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">More...</button>
 			 <br></br></h3>
 			 <div class="container">
@@ -230,7 +232,10 @@ div.photo{
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-body">
-				<p>Some text in the modal.</p>
+				<p>Weight : 4 kg.</p>
+				<p>Only feeded with special dog food (Meanwhile , baby dog food). </p>
+				<p> Massive hair loss : in spring. </p>
+				<p> Needs special shampoo and conditioner for bathtime. </p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -244,8 +249,9 @@ div.photo{
         </div>
 			 </br></br>
 		
-		<div><h3 style="float:left; background-color:#f8def5;  margin-left:50px; padding:50px; "> <img src="cu.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
-			 Here we have little Sasha , who has been adopted only few weeks ago. She is a short , sweet and gentle yorkshire.
+		<div><h3 style="float:left; background-color:#f8def5;  margin-left:50px; padding:50px; "> 
+		<img src="cu.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
+			 Here we have little Sasha . She is a short , sweet and gentle yorkshire.
 			 She is only 3 months old and has been left without a shelter by an unfortunate car accident who killed her mother.
 			 <br></br><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">More...</button>
 			 </h3> 
@@ -260,7 +266,10 @@ div.photo{
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-body">
-				<p>Some text in the modalh.</p>
+				<p>Weight: 2 kg</p>
+				<p> Feed only with baby pedigree. </p>
+				<p> Needs to be hair brused daily. </p>
+				<p> Special shampoo for bathing. </p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -288,7 +297,11 @@ div.photo{
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-body">
-				<p>Some text in the motdalh.</p>
+				<p>Weight : 6 kg.</p>
+				<p>Eats pedigree and canine dental bones. </p>
+				<p> Also a lover of dog cookies. </p>
+				<p> Hair loss only in spring , but not much. </p>
+				<p> Loves bathtime! Special shampoo needes , as well. </p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -300,7 +313,7 @@ div.photo{
 			 </div>
 			 
 			 </div>
-			 </div>
+			 
 			 
 			 <footer> Copyrights 2017 . All rights reserved. 
 				<img src="f.jpg" align="right" width="50px" height="50px"></img> 
@@ -358,21 +371,21 @@ $(document).ready(function(){
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              <input type="text" class="form-control" id="usrname" placeholder="">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" id="psw" placeholder="">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" id="psw" placeholder="">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
