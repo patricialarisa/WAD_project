@@ -2,33 +2,17 @@
 <html>
 
 
-<title> Adopted </title>
+<title> Home </title>
+
 <head>
-<link href="style.css" rel="stylesheet" type="text/css" media="all" />
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<style> 
 
-<style>
-div.photo{
-	text-align:right;
-	right:0;
-	bottom:0;
-	position:absolute;
-}
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -47,7 +31,6 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -78,6 +61,57 @@ li a:hover {
     background-color: #4CAF50;
 }
 
+
+header{
+	bottom:0;
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+    width:100%;
+	margin:auto;
+	
+}
+body, html {
+    height: 100%;
+    margin: auto;
+
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+}
+
+.bg {
+    
+	background-color: ("pet.jpg")
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 65%;
+}
+footer{
+
+	background-color: black;
+    clear: left;
+    text-align: center;
+	color:white;
+	
+	height:10%;
+ position: absolute;
+	right:0;
+  bottom: 0;
+  left: 0;
+
+}
+
+div.container {
+    width: 70%;
+    text-align:left;
+	  }
+	  
+
 .img1{
 	float:left;
 	margin-left:30px;
@@ -94,44 +128,29 @@ h3{
 	text-indent:30px;
 	padding-top:40px;
 }
-header{
-	bottom:0;
-    padding: 1em;
+
+.button {
+    background-color: #6f99f2;
+    border: none;
+    border-radius:8px;
     color: white;
-    background-color: black;
-    clear: left;
+    padding: 10px 15px;
     text-align: center;
-	
-}
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.bg {
-    
-    background-image: url("1.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-footer{
-	top:0;
-	background-color: black;
-    clear: left;
-    text-align: center;
-	color:white;
-	padding: 1em;
-	height:150px;
-
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-div.container {
-    width: 1200px;
-	text-align:left;
-	  }
-	  
+div.page{
+	background-color:white;
+	width:50%;
+	border-color:#ff0000;
+	text-align:center;
+	border-width:5px;
+}
+
 p{
 	margin-left:40px;
 	margin-right:20px;
@@ -143,15 +162,7 @@ div.content{
 border-width:5px;
 border-style:solid;
 border-color:black;
-width:50%;
-background-color:white;
-}
-
-div.content{
-border-width:5px;
-border-style:solid;
-border-color:black;
-width:50%;
+width:100%;
 background-color:white;
 }
 
@@ -159,22 +170,96 @@ div.box2{
 text-align:center;
 }
 
+
+div.photo{
+	text-align:right;
+	right:0;
+	bottom:0;
+	position:absolute;
+}
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+homeimgbutton{
+	float:left;
+	margin:auto;
+	padding-top:10%;
+	position:absolute;
+	background-image:
+	
+}
+
+
+div.background{
+  
+	background-image: url("pet.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 63%;
+}
+
+
+.more {
+  display: inline-block;
+ 
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  
+
+  background-image: url("button.jpg");
+  background-position:center;
+  border: none;
+  border-radius: 15px;
+  height:14%;
+  width:10%;
+  margin:auto;
+  float:left;
+  margin-left: 65%;
+  margin-top: 0.5%;
+
+}
+
+.more:hover {
+background-image: url("button.jpg");
+}
+
+.more:active {
+background-image: url("button.jpg");
+ 
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
 </style>
+
 <head>
-<header> 
-		<div class="container">
-	<img src="p.png" class="img1" width="300px" height="150px"></img></div>
+
+	
+	<header> 
+		<h1> A LITTLE MORE ABOUT US </h1>
 		</header></head>
 		
-		<body background="1.jpg" background-position="center" background-repeat="no-repeat"
+		<body background="resized.jpg" background-position="center" background-repeat="no-repeat" 
 	height="100%" width="100%"><!-- <div class="bg"> -->
 	
 	<ul class>
 	
-		<li><a  href="home.html">Home</a></li>
-		<li><a href="about.html">Adoption</a></li>
+		<li><a  class="active" href="home.html">Home</a></li>
+		<li><a href="about.html">About us</a></li>
 		<li><a href="app.html"> Make an appointment </a></li>
-		<li><a class="active" href="adoption.html">Happy pupps</a></li>
 		<li><a href="contact.html">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
@@ -187,47 +272,17 @@ text-align:center;
 		</li>
 		
 	 
+	
 	</ul>
-	
-	<div class="container">
-	<div style="display:block">
-		<div margin-top="50px"><h3 style="float:right; background-color:#f9a356; margin-left:20px;"> 
-		<img src="max.jpg" style="padding:50px; " class="img1" width="600px" height="400px" > </img>
-		     Here we have Goldie. He is a Golden Retriever of only 9 months , very playful and caring.
-			 He was adopted 3 months ago by a loving and nurturing family . Being enourmously loyal and cheerful,
-			 he adapts easily in children environement and , also , protects the little ones.</h3>
-	
-		</div>
-		</div></div>
-		<br></br>
-		<div class="container">
-		<div><h3 style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; ">
-		<img src="be.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
-			 Our simley-face here is Mark. He found happiness and love among a three-children family
-			 who enjoys having him around and giving him good treatment every day.</h3>
-			</div></div>
-			<br></br>
 			
-			<div class="container">
-			<div margin-top="50px"><h3 style="float:right; background-color:#f9a356; margin-right:40px; margin-left:40px;"> 
-		<img src="image.jpg" style="padding:50px; " class="img1" width="400px" height="500px" > </img>
-		     The blue-eyed princess here is Maya. She is a baby amstaff of only 4 months. She is quite sensitive
-			 and loves to have her own stuffed animal. Also , she loves kids very much." You won't find a more loving and 
-			 loyal dog than her" , said her actual owner recently.</h3>
-	
-		</div></div>
-		
-		<div class="container">
-		<div><h3 style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; ">
-		<img src="pug.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
-			 Here , we present you Twinkle , our little and mysterious friend. He is a 9 months old pug
-			 who loves running around and chasing cats. The woman who adopted him some time ago confirmed this fact.
-				</h3>
-			</div></div>
-			<br></br>
-			<br></br>
 			
-		<footer> Copyrights 2017 . All rights reserved. 
+	
+		<a href="about.html" class="more">About us</a>
+	
+	
+<br></br>
+			 
+			 <footer> Copyrights 2017 . All rights reserved. 
 				<img src="f.jpg" align="right" width="50px" height="50px"></img> 
 				<img src="tw.jpg" align="right" width="70px" height="50px"></img>
 				
@@ -283,21 +338,21 @@ $(document).ready(function(){
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
@@ -313,6 +368,7 @@ $(document).ready(function(){
       
     </div>
   </div> 
+</div>
  
 <script>
 $(document).ready(function(){
