@@ -2,35 +2,37 @@
 <?php
 
 
-define('DB_NAME', 'sonia');
-define('DB_USER', 'root');
-define('DB_PASSWORD','');
-define('DB_HOST', 'localhost');
 
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-
-if(!$link) {
-  die ('Nu m-am putut conecta: ' . mysql_error());
-}
-
-$db_selected = mysql_select_db(DB_NAME, $link);
-if(!db_selected) {
-  die ('Nu pot accesa baza de date: ' .DB_NAME . ': ' . mysql_error());
-}
-
-$first_name = $_POST['Name'];
-$last_name = $_POST['Surname'];
-$email = $_POST['Mail'];
+    $link = mysqli_connect("localhost", "root", "", "sonia");
 
 
-$sql = "INSERT INTO persons(Name, Surname,Mail) VALUES ($first_name, $last_name,$email)";
-#$sql = "INSERT INTO persons(Name, Surname,Mail) VALUES ('$first_name', '$last_name','$email')";
+    if($link === false){
 
-if(!mysql_query($sql)) { 
-  die ('Nu am putut scrie in baza de date: ' . mysql_error());
-}
+        die("ERROR: Could not connect. " . mysqli_connect_error());
 
-mysql_close();
+    }
+
+
+    $first_name = mysqli_real_escape_string($link, $_REQUEST['Name']);
+    $last_name = mysqli_real_escape_string($link, $_REQUEST['Surname']);
+    $email = mysqli_real_escape_string($link, $_REQUEST['Mail']);
+	$message = mysqli_real_escape_string($link, $_REQUEST['Message']);
+
+
+    $sql = "INSERT INTO appoints (Name, Surname, Mail,Message) VALUES ('$first_name', '$last_name', '$email','$message')";
+
+    if(mysqli_query($link, $sql)){
+        echo "Records added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+
+    }
+
+    mysqli_close($link);
+
+
+
+
 
 ?>
 

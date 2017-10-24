@@ -93,13 +93,14 @@ footer{
     text-align: center;
 	color:white;
 	padding: 1em;
-	height:150px;
+	height:10%;
 
 }
 
 div.container {
     width: 1200px;
 	text-align:left;
+
 	  }
 	  
 
@@ -181,7 +182,15 @@ div.photo{
   .modal-footer {
       background-color: #f9f9f9;
   }
+  
+div.absolute {
+    position: absolute;
+    bottom: -200px;
+    right: 150px;
+    width: 300px;
+	
 
+}
 </style>
 
 <head>
@@ -198,7 +207,8 @@ div.photo{
 	
 	<ul class>
 	
-		<li><a  href="home.html">Home</a></li>
+		<li><a  href="home1.html">Home</a></li>
+		<li><a href="about_us.html">About us</a></li>
 		<li><a href="about.html">Adoption</a></li>
 		<li><a href="app.html"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
@@ -216,7 +226,7 @@ div.photo{
 	 
 	</ul>
 	
-	<div class="container">
+	<div class="container" style="display:block" >
 	 
 	<h1> Contact Us Online </h1>
 	
@@ -224,14 +234,30 @@ div.photo{
 	reach out directly to the shelter where the animal is located.
 	Shelter information is listed on each animal's profile page. Thank you!</h3>
 	
+
+			
+			
     <form method="post" action="send.php" >
 			  <p align="left"><b>First Name:</b><input name="Name" style="width:200px " id="Name" type="text" /></p>
 			  <p align="left"><b>Last Name:</b><input name="Surname"  style="width:200px" id="Surname" type="text" /> </p>
 			  <p align="left" ><b>E-mail:</b><input name="Mail" style="width:200px"  id="Mail" type="text" /></p>
+			  <p align="left"><b>Message:</b><input name="Message" style="width:200px; height:200px" id="Message" type="text" /></p>
    
    <button class="button" type="submit">Send Message</button>
 	</form>
-	 
+	
+	 <div class="absolute">
+		<div class="title">
+					<h2>For more information:</h2>
+					<p><b><i>Phone number: 0789 123 456</b></i><br />
+					<b><i>Email: petango@test.ro</b></i>
+					</br><b><i>Address: St. Paris , number 7 </b></i></br>
+					<b><i> City: Timisoara</b></i></br>
+					<b><i>Country: Romania </b></i></p>
+				
+				</div>
+		<img src="index.jpg" height="200px" width="200px"></img>
+		</div>
 	 
 	 <br></br>
 	 
@@ -240,7 +266,14 @@ div.photo{
 	 Pethealth Services Inc. including
 	 notifications regarding lost pets and news updates. I may withdraw my consent at any time by emailing 
 	 unsubscribe@petango.com or by resubmitting a request on the unsubscribe page. </i> </p> </div>
+	 
+	 
+	
+	
+	
 	</div>
+	
+	
 	
 	<footer> Copyrights 2017 . All rights reserved. 
 				<img src="f.jpg" align="right" width="50px" height="50px"></img> 
