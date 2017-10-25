@@ -38,7 +38,7 @@
 
 
 <p>The information sheet has been successfully redirected ! Thank you for your time!</p>
-<br/><a href="home.html">Back to home page</a>
+<br/><a href="home1.html">Back to home page</a>
 
 
 
