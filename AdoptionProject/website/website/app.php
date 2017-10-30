@@ -11,7 +11,7 @@
 
 <style>
 
-input[type=text] {
+input[type=text1] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -26,9 +26,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 100%;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -179,7 +177,7 @@ div.photo{
 
 </style>
 </head>
-<body background="s.jpg" background-position="center" background-repeat="no-repeat"
+<body background="images\s.jpg" background-position="center" background-repeat="no-repeat"
 	height="100%" width="100%" >
 	
 	
@@ -187,40 +185,99 @@ div.photo{
 
 	<header>
 		<div class="container">
-	<img src="p.png" class="img1" width="300px" height="150px"></img></div>
+	<img src="images\p.png" class="img1" width="300px" height="150px"></img></div>
 	</header>
 	
-	<ul>
-		
+	<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php"></a>
+			
+			<ul class>
+	
 		<li><a  href="home1.html">Home</a></li>
 		<li><a href="about_us.html">About us</a></li>
 		<li><a href="about.html">Adoption</a></li>
-		<li><a class="active" href="app.html"> Appointment </a></li>
+		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a class="active" href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
-			<input  type="text" name="search" placeholder="Search..">
+			<input  type="text1" name="search" placeholder="Search..">
 		</form></li>
-		<li style="float:right"><button type="button" class="btn btn-default btn-lg" id="myButton">Sign up</button></li>
 		
-		<li style="float:right"><button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button></li>
 		
+		</li>
+		
+	 
 	</ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="nav navbar-nav pull-right">
+                <?php if (isset($_SESSION['user_id'])) { ?>
+                   <li><p class="navbar-text"> <?php echo $_SESSION['user_name']; ?></p></li>
+                <?php } else { ?>
+                    
+                    <li class="active"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- modal login form -->
+<div id="login-modal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-modal-container">
+            <form id="login-form" role="form">
+                <div class="modal-body">
+                    <h2>Login To Your Account </h2>
+                    <div id="err-msg"></div>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" placeholder="Your email address" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <div id="captcha"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="login" name="login" value="Log In" class="btn btn-primary btn-block btn-lg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    Don't have an account? <a href="#">Sign Up here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 	
 	<div id="page" class="content" background-color="white" width="100%"	>
 		<div id="content" width="100%">
 			<div class="title" position="center" width="100%">
 				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Online appointment</b></font></h1></div>
                 
-		<form method="post" action="trimite.php" >
+		<form method="post" action="appointment.php" >
 			  <p align="left"><b>First Name:</b><input name="first_name" style="width:200px " id="first_name" type="text" /></p>
 			  <p align="left"><b>Last Name:</b><input name="last_name"  style="width:200px" id="last_name" type="text" /> </p>
 			  <p align="left"><b>E-mail:</b><input name="email" style="width:200px"  id="email" type="text" /></p>
 			  <p align="left"><b>Phone number:</b> <input name="phone" style="width:200px" id="phone" type="text" /></p>
-			  <p align="left"><b>Appointment hour:</b><input name="app" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Appointment day:</b><input name="app" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Adoption ID </b><input name="app" style="width:200px" id="hour" type="text" /></p>
+			  <p align="left"><b>Appointment hour:</b><input name="app1" style="width:200px" id="hour" type="text" /></p>
+			  <p align="left"><b>Appointment day:</b><input name="app2" style="width:200px" id="hour" type="text" /></p>
+			  <p align="left"><b>Adoption ID </b><input name="id" style="width:200px" id="hour" type="text" /></p>
 			  <p align="left"><b>Observations:</b><input name="obs" style="height:200px; width:200px" id="obs" type="text" /></p>
 	
 		<p align="left"><button type="submit" align="left">Send</button></p>
@@ -229,7 +286,7 @@ div.photo{
 		For your time is precious , we don't want you to waste it. Complete the on-line form above.
 		Otherwise , you can return to the home page by clicking the button below. </i></p>
 		<p align="center"><i>Thank you ! </i></p>
-		<p align="center"><a href="#home"><img class="home" src="hh.png"  width="70" height="70" /></a></p>
+		<p align="center"><a href="home1.html"><img class="home" src="images\hh.png"  width="70" height="70" /></a></p>
 		</div>
 		
 		
@@ -255,51 +312,11 @@ div.photo{
 				
 				</div>
 				<footer> Copyrights 2017 . All rights reserved. 
-				<img src="f.jpg" align="right" width="50px" height="50px"></img> 
-				<img src="tw.jpg" align="right" width="70px" height="50px"></img>
+				<img src="images\f.jpg" align="right" width="50px" height="50px"></img> 
+				<img src="images\tw.jpg" align="right" width="70px" height="50px"></img>
 				
 				</footer>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-  <script>
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
+
 </script>
 
 <div class="modal fade" id="mymodal" role="dialog">

@@ -14,7 +14,7 @@
 </head>
 <style> 
 
-input[type=text] {
+input[type=text1] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -190,76 +190,94 @@ div.photo{
 		<body background="images\s.jpg" background-position="center" background-repeat="no-repeat"
 	height="100%" width="100%"><!-- <div class="bg"> -->
 	
-	<ul class>
+	<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php"></a>
+			
+			<ul class>
 	
-		<li><a href="home1.html">Home</a></li>
-		<li><a  class="active" href="about_us.html">About us</a></li>
+		<li><a class="active" href="home1.html">Home</a></li>
+		<li><a href="about_us.html">About us</a></li>
 		<li><a href="about.html">Adoption</a></li>
-		<li><a href="app.html">Appointment </a></li>
+		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a  href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
-			<input  type="text" name="search" placeholder="Search..">
+			<input  type="text1" name="search" placeholder="Search..">
 		</form></li>
-		<li style="float:right; padding-right:20px"><button type="button" class="btn btn-default btn-lg" id="myButton">Sign up</button></li>
 		
-		<li style="float:right;"><button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
 		
 		</li>
 		
 	 
 	</ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="nav navbar-nav pull-right">
+                <?php if (isset($_SESSION['user_id'])) { ?>
+                   <li><p class="navbar-text"> <?php echo $_SESSION['user_name']; ?></p></li>
+                <?php } else { ?>
+                   
+                    <li class="active"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- modal login form -->
+<div id="login-modal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-modal-container">
+            <form id="login-form" role="form">
+                <div class="modal-body">
+                    <h2>Login To Your Account </h2>
+                    <div id="err-msg"></div>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" placeholder="Your email address" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <div id="captcha"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="login" name="login" value="Log In" class="btn btn-primary btn-block btn-lg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    Don't have an account? <a href="#">Sign Up here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 	
 	
 		
 <div class="container">
 
 		<div margin-top="50px"> 
-		<img src="images\team.jpg" style="padding:50px; margin-top:50px "  class="img1" width="100%" height="40%" > </img>
+		<a href="about_us.html"><img src="images\resized.jpg" style="padding:50px; "  class="img1" width="100%" height="60%" > </a></img>
 		    
 	
 		</div>
-		<br></br>
-		
-		<div margin-top="50px"><h2 style="background-color:#f9a356; margin-left:20px;"> 
-		   Hello !!
-			 <br></br>
-
-			 We are Sonia and Patricia. Two college students who wanted to help the homeless dogs to find a loving family for them.
-			 <br></br>
-			 When we initially started to help this pretty little souls by feeding them sometimes offering them a shelter, we didn't think that through us
-			 we could encourage other people to do the same. So that was the moment when the idea came.
-			 <br></br>
-			 We started to look for a place where we could keep them, offering them food affection and all the needed until they find a carrying family.
-			 <br></br>
-			 So this is what we do every single day : we look for other poor souls who need our help, bring them to the location and here we make an exchange
-			 of true friendship. They also make new friends with the puppies that are already there until through this online environment they find an
-			 appropriate and carrying family for them.
-			 <br></br></h2>
-	
-		
-		</div></div>
-		
-		
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
+		</div>
+			
 			 
 			 </div>
 			 

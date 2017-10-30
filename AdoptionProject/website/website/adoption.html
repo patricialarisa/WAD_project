@@ -29,7 +29,7 @@ div.photo{
       background-color: #f9f9f9;
   }
   
-input[type=text] {
+input[type=text1] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -44,9 +44,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 100%;
-}
+
 
 ul {
     list-style-type: none;
@@ -169,25 +167,81 @@ text-align:center;
 		<body background="images\1.jpg" background-position="center" background-repeat="no-repeat"
 	height="100%" width="100%"><!-- <div class="bg"> -->
 	
-	<ul class>
+	<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php"></a>
+			
+			<ul class>
 	
 		<li><a  href="home1.html">Home</a></li>
 		<li><a href="about_us.html">About us</a></li>
 		<li><a href="about.html">Adoption</a></li>
-		<li><a href="app.html"> Appointment </a></li>
-		<li><a class="active" href="adoption.html">Happy pupps</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="app.php"> Appointment </a></li>
+		<li><a href="adoption.html">Happy pupps</a></li>
+		<li><a class="active" href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form>
-			<input  type="text" name="search" placeholder="Search..">
+			<input  type="text1" name="search" placeholder="Search..">
 		</form></li>
-		<li style="float:right; padding-right:20px"><button type="button" class="btn btn-default btn-lg" id="myButton">Sign up</button></li>
 		
-		<li style="float:right;"><button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
 		
 		</li>
 		
 	 
+	</ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="nav navbar-nav pull-right">
+                <?php if (isset($_SESSION['user_id'])) { ?>
+                   <li><p class="navbar-text"> <?php echo $_SESSION['user_name']; ?></p></li>
+                <?php } else { ?>
+                    <li class="active"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- modal login form -->
+<div id="login-modal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-modal-container">
+            <form id="login-form" role="form">
+                <div class="modal-body">
+                    <h2>Login To Your Account </h2>
+                    <div id="err-msg"></div>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" placeholder="Your email address" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg" />
+                    </div>
+                    <div class="form-group">
+                        <div id="captcha"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="login" name="login" value="Log In" class="btn btn-primary btn-block btn-lg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    Don't have an account? <a href="#">Sign Up here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 	</ul>
 	
 	<div class="container">
@@ -244,14 +298,14 @@ text-align:center;
           <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+          <form role="form" method="post" action="login.php">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
+              <input type="text" class="form-control" id="username" placeholder="">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
+              <input type="text" class="form-control" id="password" placeholder="">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
