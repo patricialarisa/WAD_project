@@ -1,48 +1,38 @@
-
 <?php
+include('db.php');
+if(isset($_POST['action']))
+{          
+     $conn = new mysqli('localhost', 'root', '', 'db_login');
 
-
-
-    $link = mysqli_connect("localhost", "root", "", "db_login");
-
-
-    if($link === false){
-
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-
+    if($_POST['action']=="signup")
+    {
+        $name       = mysqli_real_escape_string($connection,$_POST['name']);
+        $email      = mysqli_real_escape_string($connection,$_POST['email']);
+        $password   = mysqli_real_escape_string($connection,$_POST['password']);
+        $query = "SELECT email FROM users where email='".$email."'";
+        $result = mysqli_query($connection,$query);
+        $numResults = mysqli_num_rows($result);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
+        {
+            $message =  "Invalid email address please type a valid email!!";
+        }
+        elseif($numResults>=1)
+        {
+            $message = $email." Email already exist!!";
+        }
+        else
+        {
+			$sql = "INSERT INTO users(name,email,password)VALUES ('".$_POST["name"]."','".$_POST["email"]."','".$_POST["password"]."')";
+           // mysql_query("insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
+		   if (mysqli_query($conn, $sql)) {
+               echo "New record created successfully";
+            $message = "Signup Sucessfully!!";
+        }
     }
-
-
-    $first_name = mysqli_real_escape_string($link, $_REQUEST['name']);
-    $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-	$password = mysqli_real_escape_string($link, $_REQUEST['password']);
-
-
-    $sql = "INSERT INTO users (name, email, password) VALUES ('$first_name','$email','$password')";
-
-    if(mysqli_query($link, $sql)){
-        echo "Records added successfully.";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-
-    }
-
-    mysqli_close($link);
-
-
-
-
-
+}
+}
+ 
 ?>
-
-
-<p>The information sheet has been successfully redirected ! Thank you for your time!</p>
-<br/><a href="home1.html">Back to home page</a>
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -367,38 +357,16 @@ div.photo{
 				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Register</b></font></h1></div>
                 
 			<div class="container">	
-		<form id='register' action='signup.php' method='post' accept-charset='UTF-8'>
-
-
-
-
-<div class='container'>
-    <label for='name' >Your Full Name*: </label><br/>
-    <input type='text' name='name' id='name' value='' maxlength="50" /><br/>
-    <span id='register_name_errorloc' class='error'></span>
-</div>
-<div class='container'>
-    <label for='email' >Email Address*:</label><br/>
-    <input type='text' name='email' id='email' value='' maxlength="50" /><br/>
-    <span id='register_email_errorloc' class='error'></span>
-</div>
-
-<div class='container' style='height:80px;'>
-    <label for='password' >Password*:</label><br/>
-	<input type='password' name='password' id='password' maxlength="50" />
-    <div class='pwdwidgetdiv' id='thepwddiv' ></div>
-    <noscript>
-    
-    </noscript>    
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
-</div>
-
-</fieldset>
-</form></div>
+			<form action="" method="post">
+   <br> <p align="center"><b>Name:  </b><input id="name" name="name" type="text" placeholder=""></p> 
+    <br><p align="center"> <b> E-mail : </b><input id="email" name="email" type="text" placeholder=""></p>
+    <br><p align="center"><b> Password: </b><input id="password" name="password" type="password" placeholder=""></br>
+	<br></br>
+    <input name="action" type="hidden" value="signup" /></p>
+    <p><input type="submit" value="Signup" /></p>
+  </form>
+		</div>
+		<br></br>
 	<p ><i>* If you wish to make an appointment,our team will undertake your call as soon as possible.
 		For your time is precious , we don't want you to waste it. Complete the on-line form above.
 		Otherwise , you can return to the home page by clicking the button below. </i></p>

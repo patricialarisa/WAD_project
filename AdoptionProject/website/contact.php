@@ -1,5 +1,6 @@
 
-<?php @session_start(); ?>
+<?php @session_start();
+?>
 
 <html>
 
@@ -327,7 +328,7 @@ div.absolute {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    Don't have an account? <a href="#">Sign Up here</a>
+                    Don't have an account? <a href="signup.php">Sign Up here</a>
                 </div>
             </form>
         </div>

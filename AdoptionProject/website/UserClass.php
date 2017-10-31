@@ -11,7 +11,7 @@ class UserClass
     
     function userLogin($email, $pwd)
     {
-        $result = $this->db->query("SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($pwd) . "'");
+        $result = $this->db->query("SELECT * FROM users WHERE email = '" . $email. "' and password = '" . $pwd . "'");
         
         if ($result->num_rows > 0)
         {
