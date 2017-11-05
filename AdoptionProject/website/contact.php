@@ -282,7 +282,7 @@ div.absolute {
 		<li><a href="adoption.html">Happy pupps</a></li>
 		<li><a class="active" href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
-		<li style="float:center"><form action="get_results.php" method="post" >
+		<li style="float:center"><form action="s.php" method="post"  >
 			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
 			 <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>-->
 		<!--<li class="button"><a href="login.php" data-toggle="modal" data-target="#login-modal">Search</a></li>-->

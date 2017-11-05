@@ -1,43 +1,30 @@
-<?php
-include('db.php');
-if(isset($_POST['action']))
-{          
-     $conn = new mysqli('localhost', 'root', '', 'db_login');
 
-    if($_POST['action']=="signup")
-    {
-        $name       = mysqli_real_escape_string($connection,$_POST['name']);
-        $email      = mysqli_real_escape_string($connection,$_POST['email']);
-        $password   = mysqli_real_escape_string($connection,$_POST['password']);
-        $query = "SELECT email FROM users where email='".$email."'";
-        $result = mysqli_query($connection,$query);
-        $numResults = mysqli_num_rows($result);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
-        {
-            $message =  "Invalid email address please type a valid email!!";
-        }
-        elseif($numResults>=1)
-        {
-            $message = $email." Email already exist!!";
-        }
-        else
-        {
-			$sql = "INSERT INTO users(name,email,password)VALUES ('".$_POST["name"]."','".$_POST["email"]."','".$_POST["password"]."')";
-           // mysql_query("insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
-		   if (mysqli_query($conn, $sql)) {
-               echo "New record created successfully";
-            $message = "Signup Sucessfully!!";
-        }
-    }
-}
-}
- 
+
+<?php
+
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'db_login';
+
+$db = new mysqli($hostname, $username, $password, $database);
+if($db->connect_errno)
+    die('Error ' . $this->db->connect_error);
+
+
+$search = (isset($_POST['search']) ? $_POST['search'] : 'abc');
+
+$query="SELECT count(name) FROM search_table where name='".$search."'";
+$result = mysqli_query($db,$query);
+$numResults = mysqli_num_rows($result);
+die("$numResults");
+
 ?>
 
-
-<!DOCTYPE html>
 <html>
-<title > Sign Up </title>
+
+      
+
 <head>
 <link href="style.css" rel="stylesheet" type="text/css" media="all" />
 <meta charset="utf-8">
@@ -272,6 +259,8 @@ div.photo{
 	<header>
 		<div class="container">
 	<img src="images\p.png" class="img1" width="300px" height="150px"></img></div>
+	 
+    
 	</header>
 	
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -351,67 +340,34 @@ div.photo{
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="Script.js"></script>
 	
-	<div id="page" class="content" background-color="white" width="100%"	>
+	<div id="page" class="content" background-color="white" width="100%">
+	<h2 style="float:center; margin-left:50px; " >Search results:</h2>
 		<div id="content" width="100%">
 			<div class="title" position="center" width="100%">
-				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Register</b></font></h1></div>
-                
-			<div class="container">	
-			<form action="" method="post">
-   <br> <p align="center"><b>Name:  </b><input id="name" name="name" type="text" placeholder=""></p> 
-    <br><p align="center"> <b> E-mail : </b><input id="email" name="email" type="text" placeholder=""></p>
-    <br><p align="center"><b> Password: </b><input id="password" name="password" type="password" placeholder=""></br>
-	<br></br>
-    <input name="action" type="hidden" value="signup" /></p>
-    <p><input type="submit" value="Signup" /></p>
-  </form>
-		</div>
-		<br></br>
-	<p ><i>* If you wish to make an appointment,our team will undertake your call as soon as possible.
-		For your time is precious , we don't want you to waste it. Complete the on-line form above.
-		Otherwise , you can return to the home page by clicking the button below. </i></p>
-		<p align="center"><i>Thank you ! </i></p>
-		<p align="center"><a href="home1.html"><img class="home" src="images\hh.png"  width="70" height="70" /></a></p>
-		</div>
+                <section id="main" class="container">
+
+   
+
+    <div class="box">
+    <?php 
 		
+	while ($row = mysqli_fetch_array($result)) :
 		
-		
-		<div id="sidebar">
-		
-			<div class="box2">
-			
-				<div class="title">
-					<h2>For more information</h2>
-					<p>Phone number: 0789 123 456<br />
-					Email: contact@test.ro</p>
-				
-				</div>
-				
-				</div>
-				
-				
-				
-				
-				</div>
-				
-				
-				</div></div>
-				<footer> Copyrights 2017 . All rights reserved. 
+		//$page = (isset($_POST['website']) ? $_POST['website'] : '');
+		$output = " Number of results found : $numResults <br>Breed: $search <br /> ";
+		echo "<div class=\"box\">$output</div>";
+	endwhile;
+	
+?>
+    </div>
+</section>
+</br></br>
+			</div></div></div>
+			<br></br>
+<footer> Copyrights 2017 . All rights reserved. 
 				<img src="images\f.jpg" align="right" width="50px" height="50px"></img> 
 				<img src="images\tw.jpg" align="right" width="70px" height="50px"></img>
 				
 				</footer>
-
-
- 
-<script>
-$(document).ready(function(){
-    $("#myButton").click(function(){
-        $("#mymodal").modal();
-    });
-});
-</script>
-
-
-</body>
+				</body>
 </html>
