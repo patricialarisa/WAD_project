@@ -13,11 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style> 
-{
-    border-radius: 2px !important;
-    -moz-border-radius: 2px !important;
-    -webkit-border-radius: 2px !important;
-}
+
 
 .login-modal-container  {
     max-width: 350px;
@@ -65,7 +61,7 @@
 
 
 input[type=text1] {
-    width: 100px;
+    width: 150px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -253,13 +249,15 @@ div.photo{
 	
 		<li><a  href="home1.html">Home</a></li>
 		<li><a href="about_us.html">About us</a></li>
-		<li><a href="about.html">Adoption</a></li>
+		<li><a class="active" href="about.html">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
-		<li><a class="active" href="contact.php">Contact</a></li>
+		<li><a  href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
-		<li style="float:center"><form>
-			<input  type="text1" name="search" placeholder="Search..">
+		<li style="float:center"><form action="get_results.php" method="post" >
+			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
+			 <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>-->
+		<!--<li class="button"><a href="login.php" data-toggle="modal" data-target="#login-modal">Search</a></li>-->
 		</form></li>
 		
 		
@@ -303,7 +301,7 @@ div.photo{
                     </div>
                 </div>
                 <div class="modal-footer">
-                    Don't have an account? <a href="#">Sign Up here</a>
+                    Don't have an account? <a href="signup.php">Sign Up here</a>
                 </div>
             </form>
         </div>
@@ -602,25 +600,7 @@ div.photo{
         </div>
 			 </br></br>
 			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
+		
 			 
 			 
 			 </div>
@@ -632,40 +612,7 @@ div.photo{
 				
 				</footer>
 
-		<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+		
   
   <script>
 $(document).ready(function(){
@@ -675,44 +622,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="modal fade" id="mymodal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign up</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
+
  
 <script>
 $(document).ready(function(){

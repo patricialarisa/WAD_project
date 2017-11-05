@@ -2,6 +2,7 @@
 <?php @session_start();
 ?>
 
+<? include("search.php"); ?>
 <html>
 
 <title> Contact </title>
@@ -9,7 +10,11 @@
 
 
 <head>
-<title>AJAX PHP Login Script using Bootstrap</title>
+
+
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
@@ -22,7 +27,7 @@
 
 <style>
 
-input[type=text1] {
+input[class=text1] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -142,6 +147,7 @@ h3{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+	width:10px;
 }
 
 div.page{
@@ -197,11 +203,6 @@ div.absolute {
 
 }
 
-{
-    border-radius: 2px !important;
-    -moz-border-radius: 2px !important;
-    -webkit-border-radius: 2px !important;
-}
 
 .login-modal-container  {
     max-width: 350px;
@@ -281,16 +282,18 @@ div.absolute {
 		<li><a href="adoption.html">Happy pupps</a></li>
 		<li><a class="active" href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
-		<li style="float:center"><form>
-			<input  type="text1" name="search" placeholder="Search..">
+		<li style="float:center"><form action="get_results.php" method="post" >
+			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
+			 <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>-->
+		<!--<li class="button"><a href="login.php" data-toggle="modal" data-target="#login-modal">Search</a></li>-->
 		</form></li>
-		
-		
-		</li>
 		
 	 
 	</ul>
         </div>
+		
+		
+		
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="nav navbar-nav pull-right">
                 <?php if (isset($_SESSION['user_id'])) { ?>
@@ -339,6 +342,9 @@ div.absolute {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="Script.js"></script>
+<div class="container">
+		
+		
 	
 	<div class="container" style="display:block" >
 	 
@@ -395,8 +401,6 @@ div.absolute {
 				
 				</footer>
 
-		<!-- modal login form -->
-<div id="login-modal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="login-modal-container">
             <form id="login-form" role="form">
@@ -423,9 +427,7 @@ div.absolute {
         </div>
     </div>
 </div>
-    
-     
-  
+
   <script>
 $(document).ready(function(){
     $("#myBtn").click(function(){
@@ -434,45 +436,6 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="modal fade" id="mymodal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign up</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
- 
 <script>
 $(document).ready(function(){
     $("#myButton").click(function(){

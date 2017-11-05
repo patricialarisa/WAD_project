@@ -252,14 +252,16 @@ div.photo{
 			<ul class>
 	
 		<li><a  href="home1.html">Home</a></li>
-		<li><a href="about_us.html">About us</a></li>
+		<li><a class="active" href="about_us.html">About us</a></li>
 		<li><a href="about.html">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
-		<li><a class="active" href="contact.php">Contact</a></li>
+		<li><a  href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
-		<li style="float:center"><form>
-			<input  type="text1" name="search" placeholder="Search..">
+		<li style="float:center"><form action="get_results.php" method="post" >
+			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
+			 <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>-->
+		<!--<li class="button"><a href="login.php" data-toggle="modal" data-target="#login-modal">Search</a></li>-->
 		</form></li>
 		
 		
@@ -303,7 +305,7 @@ div.photo{
                     </div>
                 </div>
                 <div class="modal-footer">
-                    Don't have an account? <a href="#">Sign Up here</a>
+                    Don't have an account? <a href="signup.php">Sign Up here</a>
                 </div>
             </form>
         </div>
