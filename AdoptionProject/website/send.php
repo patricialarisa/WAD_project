@@ -3,7 +3,7 @@
 
 
 
-    $link = mysqli_connect("localhost", "root", "", "sonia");
+    $link = mysqli_connect("localhost", "root", "", "db_login");
 
 
     if($link === false){
@@ -19,10 +19,10 @@
 	$message = mysqli_real_escape_string($link, $_REQUEST['Message']);
 
 
-    $sql = "INSERT INTO appoints (Name, Surname, Mail,Message) VALUES ('$first_name', '$last_name', '$email','$message')";
+    $sql = "INSERT INTO contact (first, last, mail,message) VALUES ('$first_name', '$last_name', '$email','$message')";
 
     if(mysqli_query($link, $sql)){
-        echo "Records added successfully.";
+        echo "Message retrieved successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 

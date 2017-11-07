@@ -54,6 +54,7 @@ ul {
 
 li {
     float: left;
+	
 }
 
 li a {
@@ -104,6 +105,7 @@ footer{
 	color:white;
 	padding: 1em;
 	height:10%;
+	width:100%;
 
 }
 
@@ -147,7 +149,7 @@ h3{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-	width:10px;
+
 }
 
 div.page{
@@ -368,10 +370,27 @@ div.absolute {
 			
 			
     <form method="post" action="send.php" >
-			  <p align="left"><b>First Name:</b><input name="Name" style="width:200px " id="Name" type="text" /></p>
-			  <p align="left"><b>Last Name:</b><input name="Surname"  style="width:200px" id="Surname" type="text" /> </p>
-			  <p align="left" ><b>E-mail:</b><input name="Mail" style="width:200px"  id="Mail" type="text" /></p>
-			  <p align="left"><b>Message:</b><input name="Message" style="width:200px; height:200px" id="Message" type="text" /></p>
+			  <table style="width:30%; border-color:black; border-width:5px; border-spacing:15px; cellspacing:10;margin-left:10%;background-color:white">
+ 
+		<tr align="center">
+			<td align="right"  style="padding:10px; background-color:white"><b>First name:</b></td>
+			<td align="left"  style="padding:10px"><input name="Name" style="width:200px " id="first_name" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Last name:</b></td>
+			<td align="left"  style="padding:10px"><input name="Surname"  style="width:200px" id="last_name" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>E-mail:</b></td>
+			<td align="left"  style="padding:10px"><input name="Mail" style="width:200px"  id="email" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Message:</b></td>
+			<td align="left"  style="padding:10px"><input name="Message" style="width:200px"  id="email" type="text" /></td>
+		</tr>
+		</table>
+		
+		
    <br></br>
    <button class="button" type="submit">Send Message</button>
    
@@ -401,7 +420,7 @@ div.absolute {
 				
 				</footer>
 
-    <div class="modal-dialog">
+    <!--<div class="modal-dialog">
         <div class="login-modal-container">
             <form id="login-form" role="form">
                 <div class="modal-body">
@@ -426,7 +445,7 @@ div.absolute {
             </form>
         </div>
     </div>
-</div>
+</div>-->
 
   <script>
 $(document).ready(function(){

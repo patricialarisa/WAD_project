@@ -11,6 +11,7 @@ if(isset($_POST['action']))
         $password   = mysqli_real_escape_string($connection,$_POST['password']);
         $query = "SELECT email FROM users where email='".$email."'";
         $result = mysqli_query($connection,$query);
+		//die("$email");
         $numResults = mysqli_num_rows($result);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
         {
@@ -25,8 +26,9 @@ if(isset($_POST['action']))
 			$sql = "INSERT INTO users(name,email,password)VALUES ('".$_POST["name"]."','".$_POST["email"]."','".$_POST["password"]."')";
            // mysql_query("insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
 		   if (mysqli_query($conn, $sql)) {
-               echo "New record created successfully";
+               die( "New record created successfully");
             $message = "Signup Sucessfully!!";
+			
         }
     }
 }

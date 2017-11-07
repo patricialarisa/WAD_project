@@ -12,12 +12,14 @@ if($db->connect_errno)
     die('Error ' . $this->db->connect_error);
 
 
-$search = (isset($_POST['search']) ? $_POST['search'] : 'abc');
+$search = (isset($_GET['search']) ? $_GET['search'] : 'abc');
 
-$query="SELECT count(name) FROM search_table where name='".$search."'";
+$query="SELECT name FROM search_table where name='".$search."'";
+
 $result = mysqli_query($db,$query);
 $numResults = mysqli_num_rows($result);
-die("$numResults");
+//die("$numResults");
+
 
 ?>
 
@@ -161,9 +163,10 @@ footer{
     clear: left;
     text-align: center;
 	color:white;
-	padding: 1em;
+	bottom:0;
 	height:150px;
 	width:100%;
+	
 }
 
 div.container {
@@ -350,13 +353,16 @@ div.photo{
 
     <div class="box">
     <?php 
-		
-	while ($row = mysqli_fetch_array($result)) :
-		
+	
+	if ($row = mysqli_fetch_array($result)) {
 		//$page = (isset($_POST['website']) ? $_POST['website'] : '');
 		$output = " Number of results found : $numResults <br>Breed: $search <br /> ";
 		echo "<div class=\"box\">$output</div>";
-	endwhile;
+	}
+	else{
+		echo "No results found! ";
+	}
+	mysqli_close($db);	
 	
 ?>
     </div>

@@ -257,7 +257,7 @@ div.photo{
 		<li><a href="adoption.html">Happy pupps</a></li>
 		<li><a  href="contact.php">Contact</a></li>
 		<li style="float:center;"><p>  </p></li>
-		<li style="float:center"><form action="get_results.php" method="post" >
+		<li style="float:center"><form action="s.php" method="get" >
 			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
 			 <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>-->
 		<!--<li class="button"><a href="login.php" data-toggle="modal" data-target="#login-modal">Search</a></li>-->
@@ -322,17 +322,51 @@ div.photo{
 				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Online appointment</b></font></h1></div>
                 
 		<form method="post" action="appointment.php" >
-			  <p align="left"><b>First Name:</b><input name="first_name" style="width:200px " id="first_name" type="text" /></p>
-			  <p align="left"><b>Last Name:</b><input name="last_name"  style="width:200px" id="last_name" type="text" /> </p>
-			  <p align="left"><b>E-mail:</b><input name="email" style="width:200px"  id="email" type="text" /></p>
-			  <p align="left"><b>Phone number:</b> <input name="phone" style="width:200px" id="phone" type="text" /></p>
-			  <p align="left"><b>Appointment hour:</b><input name="app1" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Appointment day:</b><input name="app2" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Adoption ID </b><input name="id" style="width:200px" id="hour" type="text" /></p>
-			  <p align="left"><b>Observations:</b><input name="obs" style="height:200px; width:200px" id="obs" type="text" /></p>
+		<table style="width:30%; border-color:black; border-width:5px; border-spacing:15px; cellspacing:10;margin-left:10%;background-color:white">
+ 
+		<tr align="center">
+			<td align="right"  style="padding:10px; background-color:white"><b>First name:</b></td>
+			<td align="left"  style="padding:10px"><input name="first_name" style="width:200px " id="first_name" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Last name:</b></td>
+			<td align="left"  style="padding:10px"><input name="last_name"  style="width:200px" id="last_name" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>E-mail:</b></td>
+			<td align="left"  style="padding:10px"><input name="email" style="width:200px"  id="email" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Phone number:</b></td>
+			<td align="left"  style="padding:10px"> <input name="phone" style="width:200px" id="phone" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Appointment hour:</b></td>
+			<td align="left"  style="padding:10px"><input name="app1" style="width:200px" id="hour" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Appointment day:</b></td>
+			<td align="left"  style="padding:10px"><input name="app2" style="width:200px" id="hour" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Adoption ID:</b></td>
+			<td align="left"  style="padding:10px"><input name="id" style="width:200px" id="hour" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td align="right"  style="padding:10px"><b>Observations:</b></td>
+			<td align="left"  style="padding:10px"><input name="obs" style="height:200px; width:200px" id="obs" type="text" /></td>
+		</tr>
+		<tr align="center">
+			<td></td>
+			<td align="left"><button type="submit" align="left">Send</button></td>
+		</tr>
+		
+</table>
+
+			
 	
-		<p align="left"><button type="submit" align="left">Send</button></p>
-	    </form>
+		
+	    </form> 
 	<p ><i>* If you wish to make an appointment,our team will undertake your call as soon as possible.
 		For your time is precious , we don't want you to waste it. Complete the on-line form above.
 		Otherwise , you can return to the home page by clicking the button below. </i></p>
