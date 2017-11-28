@@ -23,7 +23,7 @@ if(isset($_POST['action']))
         }
         else
         {
-			$sql = "INSERT INTO users(name,email,password)VALUES ('".$_POST["name"]."','".$_POST["email"]."','".$_POST["password"]."')";
+			$sql = "INSERT INTO users(name,email,password)VALUES ('".$_POST['name']."','".$_POST['email']."','".$_POST['password']."')";
            // mysql_query("insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
 		   if (mysqli_query($conn, $sql)) {
                die( "New record created successfully");
@@ -359,7 +359,7 @@ div.photo{
 				<h1 align="center"><font style="Courier" color="#B80000 " ><b>Register</b></font></h1></div>
                 
 			<div class="container">	
-			<form action="" method="post">
+			<form action="signup.php" method="post">
    <br> <p align="center"><b>Name:  </b><input id="name" name="name" type="text" placeholder=""></p> 
     <br><p align="center"> <b> E-mail : </b><input id="email" name="email" type="text" placeholder=""></p>
     <br><p align="center"><b> Password: </b><input id="password" name="password" type="password" placeholder=""></br>

@@ -6,6 +6,7 @@ if(isset($_POST["submit"])){
         $image = $_FILES['image']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
 		$text = stripcslashes($_POST['text']);
+		$modalText = stripcslashes($_POST['modalText']);
 		
 
         /*
@@ -29,7 +30,7 @@ if(isset($_POST["submit"])){
         
         
         //Insert image content into database
-        $insert = $db->query("INSERT into images (image,text) VALUES ('$imgContent','$text')");
+        $insert = $db->query("INSERT into modal (image,text,modalText) VALUES ('$imgContent','$text','$modalText')");
         if($insert){
             echo "File uploaded successfully.";
         }else{

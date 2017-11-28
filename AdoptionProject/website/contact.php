@@ -283,6 +283,7 @@ div.absolute {
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.html">Happy pupps</a></li>
 		<li><a class="active" href="contact.php">Contact</a></li>
+		<li> 
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form action="s.php" method="post"  >
 			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">

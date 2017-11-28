@@ -1,3 +1,6 @@
+<?php
+	session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -237,6 +240,7 @@ text-align:center;
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a class="active" href="adoption.html">Happy pupps</a></li>
 		<li><a  href="contact.php">Contact</a></li>
+		
 		<li style="float:center;"><p>  </p></li>
 		<li style="float:center"><form action="s.php" method="get" >
 			<input  class="text1" type="text1" name="search" id="search" placeholder="Search...">
@@ -325,17 +329,44 @@ text-align:center;
 	
 		</div></div>
 		
-		<div class="container">
-		<div style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; "><!--<h3 style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; ">
-		<img src="images\pug.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
-			 Here , we present you Twinkle , our little and mysterious friend. He is a 9 months old pug
-			 who loves running around and chasing cats. The woman who adopted him some time ago confirmed this fact.
-				</h3> -->
+		
 				
+				
+						-		
 				<?php
-				include "view.php"
-				?>
+					// se iau din db toate articolele : (poza + text)
+					// pentru fiecare articol:
+						// desenezi div class container
+						$conn = mysqli_connect("localhost", "root", "","photos");
+					if(!($conn)){
+						die("ERROR: Could not connect. " . mysqli_connect_error());
+					}
+
+					
+					$sql = "SELECT id,image,text FROM images ";
+					//WHERE id=". $_GET['id'];
+
+					$result = mysqli_query($conn,$sql) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($conn));
+					$arts = array();
+					while($row =mysqli_fetch_assoc($result)){
+						$arts[] = $row;
+						
+					}
+					
+					foreach($arts as $art) {
+						?>
+							<div class="container">
+								<div ><h3 style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; ">
+								
+								<img src="viewPhoto.php?id=<?php echo $art['id']?>" class="img2" style=" padding-left:50px;" width="600px" height="400px"/> 
+									<?php echo $art['text']; ?>
+								</h3>
 			</div></div>
+						<?php
+						
+					} 
+				?>
+			
 			<br></br>
 			<br></br>
 			
