@@ -278,10 +278,10 @@ div.absolute {
 			<ul class>
 	
 		<li><a  href="home1.html">Home</a></li>
-		<li><a href="about_us.html">About us</a></li>
-		<li><a href="about.html">Adoption</a></li>
+		<li><a href="about_us.php">About us</a></li>
+		<li><a href="about.php">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
-		<li><a href="adoption.html">Happy pupps</a></li>
+		<li><a href="adoption.php">Happy pupps</a></li>
 		<li><a class="active" href="contact.php">Contact</a></li>
 		<li> 
 		<li style="float:center;"><p>  </p></li>

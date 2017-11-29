@@ -2,7 +2,7 @@
 <html>
 
 
-<title> Home </title>
+<title> For Adoption </title>
 
 <head>
 <link href="style.css" rel="stylesheet" type="text/css" media="all" />
@@ -13,11 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style> 
-{
-    border-radius: 2px !important;
-    -moz-border-radius: 2px !important;
-    -webkit-border-radius: 2px !important;
-}
+
 
 .login-modal-container  {
     max-width: 350px;
@@ -63,8 +59,9 @@
     background-color: #F2DEDE;
 }
 
+
 input[type=text1] {
-    width: 130px;
+    width: 150px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -78,9 +75,7 @@ input[type=text1] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 100%;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -252,9 +247,9 @@ div.photo{
 			
 			<ul class>
 	
-		<li><a class="active" href="home1.html">Home</a></li>
+		<li><a  href="home1.html">Home</a></li>
 		<li><a href="about_us.php">About us</a></li>
-		<li><a href="about.php">Adoption</a></li>
+		<li><a class="active" href="about.php">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.php">Happy pupps</a></li>
 		<li><a  href="contact.php">Contact</a></li>
@@ -276,7 +271,7 @@ div.photo{
                 <?php if (isset($_SESSION['user_id'])) { ?>
                    <li><p class="navbar-text"> <?php echo $_SESSION['user_name']; ?></p></li>
                 <?php } else { ?>
-                   
+                    
                     <li class="active"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <?php } ?>
             </ul>
@@ -318,17 +313,70 @@ div.photo{
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="Script.js"></script>
 	
+	<?php
+					
+						$conn = mysqli_connect("localhost", "root", "","photos");
+					if(!($conn)){
+						die("ERROR: Could not connect. " . mysqli_connect_error());
+					}
+
+					
+					$sql = "SELECT id,image,text,modalText FROM modal ";
+					//WHERE id=". $_GET['id'];
+
+					$result = mysqli_query($conn,$sql) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($conn));
+					$arts = array();
+					while($row =mysqli_fetch_assoc($result)){
+						$arts[] = $row;
+						
+					}
+					foreach($arts as $art) {
+						
+						?>
+						
+						<div class = "container">
+						
+						<div style="display:block">
+		<div><h3 style="float:right; background-color:#f8def5; margin-left:20px;"> 
+		<img src="view.php?id=<?php echo $art['id']?>" style="padding:50px; " class="img1" width="600px" height="400px" > </img>
+		     <br></br>
+			 
+			 <?php echo $art['text']; ?>
+			 <br></br>
+			 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" 
+			 data-target="#myModal<?php echo $art['id'] ?>">More...</button>
+			 <br></br></h3>
+			 <div class="container">
+	
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal<?php echo $art['id'] ?>" role="dialog">
+		<div class="modal-dialog">
+    
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body">
+				
+				<?php echo $art['modalText']; ?>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+      
+    </div>
+	</div></div>
+			 </div>
+			 
+        </div></div>
+		<?php
+					}
+					
+					?>
+		 <div class="container">
 	
 		
-<div class="container">
-
-		<div margin-top="50px"> 
-		<a href="about_us.html"><img src="images\resized.jpg" style="padding:50px; "  class="img1" width="100%" height="60%" > </a></img>
-		    
-	
-		</div>
-		</div>
-			
+			 
 			 
 			 </div>
 			 
@@ -339,40 +387,7 @@ div.photo{
 				
 				</footer>
 
-		<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+		
   
   <script>
 $(document).ready(function(){
@@ -382,44 +397,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="modal fade" id="mymodal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Sign up</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-              <input type="text" class="form-control" id="usrname" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-              <input type="text" class="form-control" id="psw" placeholder="">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign up</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
+
  
 <script>
 $(document).ready(function(){

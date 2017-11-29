@@ -235,10 +235,10 @@ text-align:center;
 			<ul class>
 	
 		<li><a  href="home1.html">Home</a></li>
-		<li><a href="about_us.html">About us</a></li>
-		<li><a href="about.html">Adoption</a></li>
+		<li><a href="about_us.php">About us</a></li>
+		<li><a href="about.php">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
-		<li><a class="active" href="adoption.html">Happy pupps</a></li>
+		<li><a class="active" href="adoption.php">Happy pupps</a></li>
 		<li><a  href="contact.php">Contact</a></li>
 		
 		<li style="float:center;"><p>  </p></li>
@@ -301,42 +301,12 @@ text-align:center;
 <script src="Script.js"></script>
 	</ul>
 	
-	<div class="container">
-	<div style="display:block">
-		<div margin-top="50px"><h3 style="float:right; background-color:#f9a356; margin-left:20px;"> 
-		<img src="images\max.jpg" style="padding:50px; " class="img1" width="600px" height="400px" > </img>
-		     Here we have Goldie. He is a Golden Retriever of only 9 months , very playful and caring.
-			 He was adopted 3 months ago by a loving and nurturing family . Being enourmously loyal and cheerful,
-			 he adapts easily in children environement and , also , protects the little ones.</h3>
 	
-		</div>
-		</div></div>
-		<br></br>
-		<div class="container">
-		<div><h3 style="float:left; background-color:#f9a356;  margin-right:50px; margin-left:40px; padding:50px; ">
-		<img src="images\be.jpg" class="img2" style=" padding-left:50px;" width="600px" height="400px"></img>
-			 Our simley-face here is Mark. He found happiness and love among a three-children family
-			 who enjoys having him around and giving him good treatment every day.</h3>
-			</div></div>
-			<br></br>
+		
 			
-			<div class="container">
-			<div margin-top="50px"><h3 style="float:right; background-color:#f9a356; margin-right:40px; margin-left:40px;"> 
-		<img src="images\image.jpg" style="padding:50px; " class="img1" width="400px" height="500px" > </img>
-		     The blue-eyed princess here is Maya. She is a baby amstaff of only 4 months. She is quite sensitive
-			 and loves to have her own stuffed animal. Also , she loves kids very much." You won't find a more loving and 
-			 loyal dog than her" , said her actual owner recently.</h3>
-	
-		</div></div>
-		
-		
-				
-				
-						-		
+			
 				<?php
-					// se iau din db toate articolele : (poza + text)
-					// pentru fiecare articol:
-						// desenezi div class container
+					
 						$conn = mysqli_connect("localhost", "root", "","photos");
 					if(!($conn)){
 						die("ERROR: Could not connect. " . mysqli_connect_error());

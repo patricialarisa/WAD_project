@@ -7,6 +7,7 @@ if(isset($_POST["submit"])){
         $imgContent = addslashes(file_get_contents($image));
 		$text = stripcslashes($_POST['text']);
 		$modalText = stripcslashes($_POST['modalText']);
+	
 		
 
         /*

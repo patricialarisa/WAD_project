@@ -2,7 +2,7 @@
 <html>
 
 
-<title> Home </title>
+<title> About us </title>
 
 <head>
 <link href="style.css" rel="stylesheet" type="text/css" media="all" />
@@ -63,6 +63,7 @@
     background-color: #F2DEDE;
 }
 
+
 input[type=text1] {
     width: 130px;
     box-sizing: border-box;
@@ -78,9 +79,7 @@ input[type=text1] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 100%;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -252,8 +251,8 @@ div.photo{
 			
 			<ul class>
 	
-		<li><a class="active" href="home1.html">Home</a></li>
-		<li><a href="about_us.php">About us</a></li>
+		<li><a  href="home1.html">Home</a></li>
+		<li><a class="active" href="about_us.php">About us</a></li>
 		<li><a href="about.php">Adoption</a></li>
 		<li><a href="app.php"> Appointment </a></li>
 		<li><a href="adoption.php">Happy pupps</a></li>
@@ -323,12 +322,50 @@ div.photo{
 <div class="container">
 
 		<div margin-top="50px"> 
-		<a href="about_us.html"><img src="images\resized.jpg" style="padding:50px; "  class="img1" width="100%" height="60%" > </a></img>
+		<img src="images\team.jpg" style="padding:50px; margin-top:50px;"  class="img1" width="100%" height="40%" > </img>
 		    
 	
 		</div>
-		</div>
-			
+		<br></br>
+		
+		<div margin-top="50px" style="background-color:#f9a356; margin-left:20px; padding:30px">
+		<h1 align="center" > Hello !! </h1>
+		<h2 style="background-color:#f9a356; margin-left:20px; padding:30px"> 
+		  
+			 We are Sonia and Patricia. Two college students who wanted to help the homeless dogs to find a loving family for them.
+			 <br></br>
+			 When we initially started to help this pretty little souls by feeding them sometimes offering them a shelter, we didn't think that through us
+			 we could encourage other people to do the same. So that was the moment when the idea came.
+			 <br></br>
+			 We started to look for a place where we could keep them, offering them food affection and all the needed until they find a carrying family.
+			 <br></br>
+			 So this is what we do every single day : we look for other poor souls who need our help, bring them to the location and here we make an exchange
+			 of true friendship. They also make new friends with the puppies that are already there until through this online environment they find an
+			 appropriate and carrying family for them.
+			 <br></br></h2>
+	
+		
+		</div></div>
+		
+		
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
 			 
 			 </div>
 			 
